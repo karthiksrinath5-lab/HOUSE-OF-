@@ -54,11 +54,21 @@
   .figure.left,.figure.right,.figure.left .portrait,.figure.right .portrait{animation:none;opacity:1;transform:none}
 }
 
+
+/* Namaskaram couple intro — replaces the previous actor portraits */
+.figure.namaste-person{width:min(23vw,300px);height:82%;bottom:-1%;filter:drop-shadow(0 16px 20px #30271b22)}
+.figure.namaste-person .portrait{width:100%;height:100%;object-fit:contain;object-position:center bottom;animation:none;filter:none}
+.figure.left.namaste-person{left:8%;animation:leftin 1.8s cubic-bezier(.16,.82,.22,1) .55s both}
+.figure.right.namaste-person{right:8%;animation:rightin 1.8s cubic-bezier(.16,.82,.22,1) .85s both}
+.greeting-hand{position:absolute;top:36%;left:50%;transform:translate(-50%,-50%) scale(.4);font-size:clamp(28px,4vw,48px);opacity:0;animation:namastePop .65s ease-out 2.35s forwards;filter:drop-shadow(0 3px 5px #0002)}
+@keyframes namastePop{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@media(max-width:760px){.figure.namaste-person{width:35%;height:57%;bottom:1%}.figure.left.namaste-person{left:2%}.figure.right.namaste-person{right:2%}.greeting-hand{top:34%;font-size:27px}}
+@media(prefers-reduced-motion:reduce){.figure.namaste-person,.greeting-hand{animation:none;opacity:1;transform:none}}
 </style></head><body>
 <div class="intro" id="intro">
 <button class="skip" id="skip">ENTER COLLECTION ↗</button>
-<div class="figure left" aria-label="Mohanlal illustrated portrait entering from the left"><img class="portrait" src="/public/images/mohanlal.webp" alt="Mohanlal illustrated portrait"><label>MOHANLAL · MALABAR ICON</label></div>
-<div class="figure right" aria-label="Mammootty illustrated portrait entering from the right"><img class="portrait" src="/public/images/mammootty.webp" alt="Mammootty illustrated portrait"><label>MAMMOOTTY · MALABAR ICON</label></div>
+<div class="figure left namaste-person" aria-label="Illustrated Kerala man entering from the left"><img class="portrait" src="/public/images/namaste-man.webp" alt="Kerala man in traditional attire"><span class="greeting-hand" aria-hidden="true">🙏</span></div>
+<div class="figure right namaste-person" aria-label="Illustrated Kerala woman entering from the right"><img class="portrait" src="/public/images/namaste-woman.webp" alt="Kerala woman in a traditional kasavu-bordered saree"><span class="greeting-hand" aria-hidden="true">🙏</span></div>
 <div class="introword"><div>HOUSE <span style="font-size:.55em">of</span> വസാഹ</div><small>ROOTED IN MALABAR · MADE FOR EVERYWHERE</small></div>
 <div class="hint">SCROLL TO ENTER THE HOUSE ↓</div></div>
 <div class="announce">COASTLINE 001 · A NEW EXPRESSION OF MALABAR</div><header class="nav"><nav class="navlinks"><a href="#collection">New arrivals</a><a href="#shirts">Shirts</a><a href="#polos">Polos</a><a href="#onam">Onam edit</a></nav><a class="wordmark" href="#">HOUSE of വസാഹ<small>MALABAR · EST. 2026</small></a><div class="navright"><a href="#collection">Search</a><button id="bag">Bag (<span id="count">0</span>)</button></div></header>
