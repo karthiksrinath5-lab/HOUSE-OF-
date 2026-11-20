@@ -24,6 +24,36 @@
 @keyframes rightin{0%{opacity:0;transform:translateX(115%) translateY(24px)}75%{opacity:1;transform:translateX(-3%) translateY(0)}100%{opacity:1;transform:translateX(0) translateY(0)}}
 @media(max-width:760px){.figure{width:48%;height:56%;bottom:1%}.figure label{font-size:6px;bottom:3%}.introword{margin-top:-100px}.introword div{font-size:clamp(28px,8vw,43px)}.hint{bottom:42px;font-size:7px}.intro:after{bottom:13px;font-size:6px}}
 @media(prefers-reduced-motion:reduce){.figure.left,.figure.right,.introword,.hint{animation:none;opacity:1;transform:none}.intro{transition:none}}
+
+/* Updated character motion: enter, settle toward the logo, then gently sway */
+.figure.left{animation:leftin 1.9s cubic-bezier(.16,.82,.22,1) .65s both}
+.figure.right{animation:rightin 1.9s cubic-bezier(.16,.82,.22,1) .95s both}
+.figure.left .portrait{animation:leanLeft 5.2s ease-in-out 2.8s infinite alternate;transform-origin:50% 92%}
+.figure.right .portrait{animation:leanRight 5.2s ease-in-out 3.1s infinite alternate;transform-origin:50% 92%}
+@keyframes leftin{
+  0%{opacity:0;transform:translateX(-125%) translateY(38px) scale(.94)}
+  68%{opacity:1;transform:translateX(4%) translateY(-3px) scale(1.015)}
+  84%{transform:translateX(-1.5%) translateY(0) scale(1)}
+  100%{opacity:1;transform:translateX(0) translateY(0) scale(1)}
+}
+@keyframes rightin{
+  0%{opacity:0;transform:translateX(125%) translateY(38px) scale(.94)}
+  68%{opacity:1;transform:translateX(-4%) translateY(-3px) scale(1.015)}
+  84%{transform:translateX(1.5%) translateY(0) scale(1)}
+  100%{opacity:1;transform:translateX(0) translateY(0) scale(1)}
+}
+@keyframes leanLeft{
+  from{transform:rotate(2.8deg) translateY(0)}
+  to{transform:rotate(-1.4deg) translateY(-5px)}
+}
+@keyframes leanRight{
+  from{transform:rotate(-2.8deg) translateY(0)}
+  to{transform:rotate(1.4deg) translateY(-5px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .figure.left,.figure.right,.figure.left .portrait,.figure.right .portrait{animation:none;opacity:1;transform:none}
+}
+
 </style></head><body>
 <div class="intro" id="intro">
 <button class="skip" id="skip">ENTER COLLECTION ↗</button>
